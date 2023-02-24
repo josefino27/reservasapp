@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ClaseController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReservaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view ('welcome');
 });
+
+Route::resource('clase', ClaseController::class)->name('index','clase');
+Route::resource('user', UserController::class);
+Route::resource('reserva', ReservaController::class)->name('index','reserva');
+
+
